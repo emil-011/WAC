@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rebufo · Live Timing — GP de Singapur</title>
+<meta name="description" content="Rebufo, la cabina de live timing para seguir la F1 en directo: torre de tiempos, stints, telemetría, radio y control de carrera.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0B0D'/%3E%3Cpath d='M20.5 7 11 16l9.5 9' fill='none' stroke='%23FF2D1F' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M25.5 8.5 19.5 16l6 7.5' fill='none' stroke='%23F2F5F8' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<div class="app">
+
+  <!-- ───────────────────────── TOP BAR ───────────────────────── -->
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Rebufo, inicio">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 34 34" fill="none">
+          <path d="M21.5 6 10.5 17l11 11" stroke="var(--red)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M27.5 8.5 21 17l6.5 8.5" stroke="var(--ink)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">rebufo</span>
+        <span class="brand-sub">live&nbsp;timing</span>
+      </span>
+    </a>
+
+    <div class="gp">
+      <span class="gp-round">R16</span>
+      <span class="gp-name">GP de Singapur</span>
+      <span class="gp-meta"><span class="gp-circuit">Marina Bay Street Circuit</span><span class="dot"></span><span>Noche</span><span class="dot"></span><span>5,063 km</span></span>
+    </div>
+
+    <div class="topbar-right">
+      <div class="seg cat-switch" role="group" aria-label="Categoría">
+        <button class="seg-btn is-active" aria-pressed="true">F1</button>
+        <button class="seg-btn seg-soon" aria-pressed="false" title="Próximamente" data-toast="MotoGP llegará en una próxima versión.">MotoGP</button>
+        <button class="seg-btn seg-soon" aria-pressed="false" title="Próximamente" data-toast="IndyCar llegará en una próxima versión.">IndyCar</button>
+      </div>
+      <div class="seg session-switch" role="group" aria-label="Sesión">
+        <button class="seg-btn" aria-pressed="false" data-toast="Demo: solo la carrera tiene datos.">FP1</button>
+        <button class="seg-btn" aria-pressed="false" data-toast="Demo: solo la carrera tiene datos.">FP2</button>
+        <button class="seg-btn" aria-pressed="false" data-toast="Demo: solo la carrera tiene datos.">QUALI</button>
+        <button class="seg-btn" aria-pressed="false" data-toast="Demo: solo la carrera tiene datos.">SPRINT</button>
+        <button class="seg-btn is-active" aria-pressed="true">RACE</button>
+      </div>
+      <div class="live-badge" title="Conexión de datos de demostración">
+        <span class="live-dot"></span><span>EN&nbsp;DIRECTO</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─────────────────────── SESSION BAR ─────────────────────── -->
+  <div class="sessionbar">
+    <div class="flag flag-green" role="status">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="2" width="1.6" height="12" rx=".8" fill="currentColor"/><path d="M3 3h10l-2.4 3L13 9H3z" fill="currentColor"/></svg>
+      <span>Pista libre</span>
+    </div>
+
+    <div class="lapbox">
+      <span class="lapbox-lbl">Vuelta</span>
+      <span class="lapbox-num" id="lapNum">34</span>
+      <span class="lapbox-of">/ 62</span>
+    </div>
+
+    <div class="chip chip-leader"><span class="chip-lbl">Líder</span><b>NOR</b><img class="chip-flag" src="assets/flags/great-britain.webp" alt="Reino Unido"></div>
+    <div class="chip chip-drs"><span class="led"></span>DRS habilitado</div>
+    <div class="chip chip-sc" hidden>Safety Car</div>
+
+    <div class="bar-weather">
+      <span class="weather-item"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></g></svg><b>29°</b><small>aire</small></span>
+      <span class="weather-item"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15h11a3 3 0 0 0 0-6 4.5 4.5 0 0 0-8.6-1.2A3.2 3.2 0 0 0 4 15z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><b>34°</b><small>pista</small></span>
+      <span class="weather-item weather-text"><svg class="wi" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h11a2.5 2.5 0 1 0-2.4-3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 12h15a2.5 2.5 0 1 1-2.4 3.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 16h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><b>1,8</b><small>m/s NE</small></span>
+    </div>
+
+    <div class="clock" id="clock">21:47:12</div>
+  </div>
+
+  <!-- ───────────────────────── MAIN ──────────────────────────── -->
+  <main class="main">
+
+    <!-- centre: timing tower + stints tab -->
+    <section class="center-panel" aria-label="Torre de tiempos">
+      <header class="panel-tabs">
+        <div class="tabs" role="tablist" aria-label="Vista central">
+          <button class="tab is-active" role="tab" aria-selected="true" id="tabBtnTiming" aria-controls="view-timing" data-tab="timing">Timing</button>
+          <button class="tab" role="tab" aria-selected="false" id="tabBtnStints" aria-controls="view-stints" data-tab="stints">Stints</button>
+        </div>
+        <span class="tabs-meta mono" id="tabsMeta">20 pilotos · vuelta 34/62</span>
+      </header>
+
+      <div class="tab-body">
+        <!-- TIMING -->
+        <div class="tab-view is-active" id="view-timing" role="tabpanel" aria-labelledby="tabBtnTiming">
+          <div class="tt" id="timingTable">
+            <div class="tt-head" role="row">
+              <span class="tt-c c-pos">Pos</span>
+              <span class="tt-c c-drv">Piloto</span>
+              <span class="tt-c c-gap">Gap</span>
+              <span class="tt-c c-int">Int</span>
+              <span class="tt-c c-last">Última</span>
+              <span class="tt-c c-best">Mejor</span>
+              <span class="tt-c c-micro">Microsectores</span>
+              <span class="tt-c c-s">S1</span>
+              <span class="tt-c c-s">S2</span>
+              <span class="tt-c c-s">S3</span>
+              <span class="tt-c c-laps">V.</span>
+              <span class="tt-c c-pit">Pit</span>
+              <span class="tt-c c-tyre">Neum.</span>
+            </div>
+            <div class="tt-body" id="ttBody" role="rowgroup"></div>
+          </div>
+        </div>
+
+        <!-- STINTS -->
+        <div class="tab-view" id="view-stints" role="tabpanel" aria-labelledby="tabBtnStints" hidden>
+          <div class="strip-inner" id="stripInner">
+            <div class="axis-row">
+              <div class="gutter axis-gutter">
+                <span class="gh gh-pos">Pos</span>
+                <span class="gh gh-driver">Piloto</span>
+                <span class="gh gh-tyre">Neu</span>
+                <span class="gh gh-age">Vida</span>
+                <span class="gh gh-gap">Gap</span>
+              </div>
+              <div class="axis-track" id="axisTrack">
+                <div class="axis-inner">
+                  <div class="axis-ticks" id="axisTicks"></div>
+                  <div class="axis-events" id="axisEvents"></div>
+                  <div class="axis-playhead" id="axisPlayhead"><span class="ph-tag" id="phTag">V34</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="lanes" id="lanes"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- right: circuit + benchmarks -->
+    <aside class="side">
+      <section class="panel circuit-panel">
+        <header class="panel-head">
+          <h3>Marina Bay · Sectores</h3>
+          <span class="panel-tag mono">5,063 km</span>
+        </header>
+        <div class="circuit-wrap">
+          <svg id="circuitSvg" viewBox="0 0 1000 563" role="img" aria-label="Mapa esquemático del circuito de Marina Bay con los sectores y la posición de los coches">
+            <path id="trackBase" class="track-base" d=""/>
+            <path id="sector1" class="track-sector s1" d=""/>
+            <path id="sector2" class="track-sector s2" d=""/>
+            <path id="sector3" class="track-sector s3" d=""/>
+            <g id="trackDots"></g>
+          </svg>
+        </div>
+        <div class="circuit-legend">
+          <span class="lg"><i class="s1"></i>S1</span>
+          <span class="lg"><i class="s2"></i>S2</span>
+          <span class="lg"><i class="s3"></i>S3</span>
+          <span class="lg lg-fin"><i class="fin"></i>Salida / llegada</span>
+          <span class="lg lg-count mono" id="trackCount">20 coches en pista</span>
+        </div>
+      </section>
+
+      <section class="panel bench-panel">
+        <header class="panel-head">
+          <h3>Mejores vueltas</h3>
+          <span class="panel-tag mono">Récords</span>
+        </header>
+        <ul class="bench" id="benchList"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <!-- ───────────────────────── DOCK ──────────────────────────── -->
+  <section class="dock" aria-label="Detalle del piloto seleccionado">
+
+    <div class="dock-head">
+      <div class="dock-photo">
+        <img id="dPhoto" src="assets/drivers/LANNOR01.webp" alt="">
+        <span class="dock-num" id="dNum">4</span>
+      </div>
+      <div class="dock-id">
+        <div class="dock-name">
+          <h2 id="dName">Lando Norris</h2>
+          <img id="dFlag" class="flag-md" src="assets/flags/great-britain.webp" alt="">
+        </div>
+        <div class="dock-team">
+          <span class="team-tick" id="dTick"></span>
+          <img id="dLogo" class="team-logo" src="assets/logos/mclaren.webp" alt="">
+          <span id="dTeam">McLaren</span>
+          <span class="dot"></span>
+          <span class="mono" id="dPosLine">P1</span>
+        </div>
+      </div>
+      <div class="dock-tyre">
+        <span class="compound" id="dComp" data-c="M">M</span>
+        <span class="dock-tyre-meta"><b id="dAge">17</b> vueltas</span>
+      </div>
+      <div class="dock-stats">
+        <div class="stat"><small>Al líder</small><b class="mono" id="dGap">—</b></div>
+        <div class="stat"><small>Intervalo</small><b class="mono" id="dInt">+0.412</b></div>
+        <div class="stat"><small>Última</small><b class="mono" id="dLast">1:36.412</b></div>
+        <div class="stat"><small>Mejor</small><b class="mono" id="dBest">1:34.982</b></div>
+      </div>
+    </div>
+
+    <div class="dock-body">
+
+      <section class="panel panel-telem">
+        <header class="panel-head">
+          <h3>Telemetría</h3>
+          <span class="panel-tag mono" id="dTelemLap">Vuelta 34</span>
+        </header>
+        <div class="telem-grid">
+          <div class="delta">
+            <div class="delta-value mono" id="dDelta">+0.412</div>
+            <div class="delta-lbl" id="dDeltaLbl">Delta al anterior</div>
+            <svg class="trace" viewBox="0 0 240 64" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="traceFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--red)" stop-opacity=".34"/>
+                  <stop offset="100%" stop-color="var(--red)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="trace-area" id="traceArea" fill="url(#traceFill)"/>
+              <path class="trace-line" id="traceLine" fill="none"/>
+              <line class="trace-zero" x1="0" y1="32" x2="240" y2="32"/>
+            </svg>
+          </div>
+          <div class="gauges">
+            <div class="gauge"><small>Velocidad</small><b class="mono"><span id="gSpeed">312</span><i>km/h</i></b><span class="bar"><i style="--v:.87"></i></span></div>
+            <div class="gauge"><small>Marcha</small><b class="mono" id="gGear">8</b><span class="pips" id="gPips"></span></div>
+            <div class="gauge"><small>Throttle</small><b class="mono"><span id="gThrottle">92</span><i>%</i></b><span class="bar bar-green"><i style="--v:.92"></i></span></div>
+            <div class="gauge"><small>Freno</small><b class="mono"><span id="gBrake">0</span><i>%</i></b><span class="bar bar-red"><i style="--v:0"></i></span></div>
+            <div class="gauge"><small>ERS</small><b class="mono"><span id="gErs">78</span><i>%</i></b><span class="bar bar-blue"><i style="--v:.78"></i></span></div>
+            <div class="gauge"><small>DRS</small><b class="mono gauge-state" id="gDrs">OPEN</b><span class="tiny">Zona 1</span></div>
+          </div>
+          <div class="telem-side">
+            <div class="sectors" id="dSectors">
+              <span class="sector" data-s="p"><small>S1</small><b class="mono">24.118</b></span>
+              <span class="sector" data-s="g"><small>S2</small><b class="mono">31.402</b></span>
+              <span class="sector" data-s="y"><small>S3</small><b class="mono">40.892</b></span>
+            </div>
+            <div class="tyres" id="dTyres">
+              <span class="tyre" style="--t:98"><small>FL</small><b class="mono">98°</b></span>
+              <span class="tyre" style="--t:101"><small>FR</small><b class="mono">101°</b></span>
+              <span class="tyre" style="--t:96"><small>RL</small><b class="mono">96°</b></span>
+              <span class="tyre" style="--t:99"><small>RR</small><b class="mono">99°</b></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel panel-radio">
+        <header class="panel-head">
+          <h3>Radio de equipo</h3>
+          <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </header>
+        <ul class="commlist" id="dRadio"></ul>
+      </section>
+
+      <section class="panel panel-control">
+        <header class="panel-head">
+          <h3>Control de carrera</h3>
+          <span class="panel-tag mono">RC</span>
+        </header>
+        <ul class="commlist commlist-rc" id="rcList"></ul>
+      </section>
+
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FOOTER ────────────────────────── -->
+  <footer class="foot">
+    <div class="legend" aria-label="Leyenda">
+      <span class="legend-item"><i class="cdot" data-c="S"></i>Blando</span>
+      <span class="legend-item"><i class="cdot" data-c="M"></i>Medio</span>
+      <span class="legend-item"><i class="cdot" data-c="H"></i>Duro</span>
+      <span class="legend-item"><i class="cdot" data-c="I"></i>Intermedio</span>
+      <span class="legend-item legend-micro"><i class="mseg m-purple"></i>Mejor de sesión</span>
+      <span class="legend-item legend-micro"><i class="mseg m-green"></i>Mejor personal</span>
+      <span class="legend-item legend-micro"><i class="mseg m-yellow"></i>Más lento</span>
+    </div>
+    <div class="foot-right">
+      <span class="synth"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.6 14.4 13H1.6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 6.4v3.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.4" r=".9" fill="currentColor"/></svg>Datos de demostración · sintéticos, no reales</span>
+      <span class="foot-brand">rebufo · <span class="mono">v0.1</span></span>
+    </div>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+<!-- ═══════════════ COLOR LAB (herramienta de desarrollo) · borrar antes de publicar ═══════════════ -->
+<div id="cl">
+  <button id="cl-btn" type="button" aria-expanded="false" aria-controls="cl-panel"><span class="cl-dot"></span>Color</button>
+  <div id="cl-panel" hidden>
+    <div class="cl-head"><b>Acento en vivo</b><button id="cl-close" type="button" aria-label="Cerrar">✕</button></div>
+    <div class="cl-swatches" id="cl-swatches"></div>
+    <div class="cl-row">
+      <label class="cl-custom">Libre<input id="cl-input" type="color" value="#FF2D1F"></label>
+      <button id="cl-rand" type="button">Aleatorio</button>
+      <button id="cl-reset" type="button">Reset</button>
+    </div>
+    <div class="cl-code" id="cl-code">#FF2D1F</div>
+  </div>
+</div>
+<style>
+  #cl{position:fixed;left:16px;bottom:16px;z-index:99;font-family:var(--font-ui,system-ui,sans-serif)}
+  #cl-btn{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 13px;border-radius:999px;
+    background:#12161B;border:1px solid rgba(255,255,255,.14);color:#F3F6F9;
+    font:700 11px/1 var(--font-ui,system-ui,sans-serif);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
+    box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 10px 24px -16px #000}
+  #cl-btn:hover{border-color:rgba(255,255,255,.3)}
+  #cl-btn .cl-dot{width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px var(--red-soft)}
+  #cl-panel{position:absolute;left:0;bottom:42px;width:276px;padding:13px;border-radius:12px;
+    background:linear-gradient(180deg,#181D24,#0E1116);border:1px solid rgba(255,255,255,.14);
+    box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 24px 50px -26px #000}
+  #cl-panel[hidden]{display:none}
+  .cl-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px}
+  .cl-head b{font:700 11px/1 var(--font-ui,system-ui,sans-serif);letter-spacing:.12em;text-transform:uppercase;color:#7E8896}
+  #cl-close{background:none;border:0;color:#7E8896;cursor:pointer;font-size:14px;line-height:1}
+  #cl-close:hover{color:#F3F6F9}
+  .cl-swatches{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-bottom:12px}
+  .cl-sw{width:100%;aspect-ratio:1/1;border-radius:50%;border:1px solid rgba(255,255,255,.22);cursor:pointer;padding:0;
+    transition:transform .15s cubic-bezier(.16,1,.3,1)}
+  .cl-sw:hover{transform:scale(1.12)}
+  .cl-sw.on{outline:2px solid #fff;outline-offset:2px}
+  .cl-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .cl-row button{height:30px;padding:0 11px;border-radius:8px;background:#0A0D11;border:1px solid rgba(255,255,255,.14);
+    color:#AEB7C2;font:700 10.5px/1 var(--font-ui,system-ui,sans-serif);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+  .cl-row button:hover{color:#F3F6F9;border-color:rgba(255,255,255,.28)}
+  .cl-custom{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 9px;border-radius:8px;
+    background:#0A0D11;border:1px solid rgba(255,255,255,.14);color:#AEB7C2;
+    font:700 10.5px/1 var(--font-ui,system-ui,sans-serif);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+  .cl-custom:hover{color:#F3F6F9;border-color:rgba(255,255,255,.28)}
+  .cl-custom input{width:22px;height:22px;border:0;background:none;padding:0;cursor:pointer}
+  .cl-code{margin-top:11px;font:600 11px/1 var(--font-mono,ui-monospace,monospace);color:#7E8896;letter-spacing:.06em}
+</style>
+<script>
+(function(){
+  var PRESETS = [
+    ['Oro','#CBA135'], ['Oro viejo','#B08527'],
+    ['Borgoña (Torino)','#9E1A2E'], ['Vino','#6E1428'],
+    ['Verde bosque','#1E7A4C'], ['Esmeralda','#0F7C5A']
+  ];
+  var DEFAULT = '#9E1A2E';
+
+  function hex2hsl(hex){
+    var c = hex.replace('#','');
+    if(c.length===3) c=c.split('').map(function(x){return x+x;}).join('');
+    var r=parseInt(c.slice(0,2),16)/255, g=parseInt(c.slice(2,4),16)/255, b=parseInt(c.slice(4,6),16)/255;
+    var max=Math.max(r,g,b), min=Math.min(r,g,b), h=0, s=0, l=(max+min)/2, d=max-min;
+    if(d){
+      s = l>0.5 ? d/(2-max-min) : d/(max+min);
+      if(max===r) h=(g-b)/d + (g<b?6:0);
+      else if(max===g) h=(b-r)/d + 2;
+      else h=(r-g)/d + 4;
+      h/=6;
+    }
+    return {h:h*360, s:s*100, l:l*100};
+  }
+  function hsl2hex(h,s,l){
+    h=((h%360)+360)%360; s=Math.max(0,Math.min(100,s))/100; l=Math.max(0,Math.min(100,l))/100;
+    var k=function(n){return (n+h/30)%12;};
+    var a=s*Math.min(l,1-l);
+    var f=function(n){return l - a*Math.max(-1,Math.min(k(n)-3,Math.min(9-k(n),1)));};
+    var to=function(x){return Math.round(255*x).toString(16).padStart(2,'0');};
+    return '#'+to(f(0))+to(f(8))+to(f(4));
+  }
+  function rgbOf(hex){
+    var c=hex.replace('#',''); if(c.length===3) c=c.split('').map(function(x){return x+x;}).join('');
+    return [parseInt(c.slice(0,2),16), parseInt(c.slice(2,4),16), parseInt(c.slice(4,6),16)];
+  }
+
+  function apply(hex, save){
+    hex = hex.toUpperCase();
+    var p = hex2hsl(hex), L = Math.min(p.l, 60);
+    var base  = hsl2hex(p.h, p.s, L);
+    var bright= hsl2hex(p.h, p.s, Math.min(L+13, 74));
+    var deep  = hsl2hex(p.h, p.s, Math.max(L-13, 21));
+    var deep2 = hsl2hex(p.h, p.s, Math.max(L-23, 12));
+    var rgb = rgbOf(base);
+    var st = document.documentElement.style;
+    st.setProperty('--red', base);
+    st.setProperty('--red-2', bright);
+    st.setProperty('--red-deep', deep);
+    st.setProperty('--red-deep2', deep2);
+    st.setProperty('--red-rgb', rgb[0]+','+rgb[1]+','+rgb[2]);
+    var list = document.querySelectorAll('#cl-swatches .cl-sw');
+    for(var i=0;i<list.length;i++){ list[i].classList.toggle('on', list[i].dataset.hex.toUpperCase()===hex); }
+    var code=document.getElementById('cl-code'); if(code) code.textContent=hex;
+    var inp=document.getElementById('cl-input'); if(inp) inp.value=base;
+    document.documentElement.dataset.live = hex;
+    if(save){ try{ localStorage.setItem('rebufo-live', hex); }catch(e){} }
+  }
+
+  var wrap=document.getElementById('cl-swatches');
+  PRESETS.forEach(function(p){
+    var b=document.createElement('button');
+    b.type='button'; b.className='cl-sw'; b.title=p[0]; b.setAttribute('aria-label',p[0]);
+    b.style.background=p[1]; b.dataset.hex=p[1];
+    b.addEventListener('click', function(){ apply(p[1], true); });
+    wrap.appendChild(b);
+  });
+
+  var panel=document.getElementById('cl-panel'), btn=document.getElementById('cl-btn');
+  btn.addEventListener('click', function(){
+    panel.hidden = !panel.hidden;
+    btn.setAttribute('aria-expanded', String(!panel.hidden));
+  });
+  if(new URLSearchParams(location.search).get('lab')==='1'){ panel.hidden=false; btn.setAttribute('aria-expanded','true'); }
+  document.getElementById('cl-close').addEventListener('click', function(){
+    panel.hidden=true; btn.setAttribute('aria-expanded','false');
+  });
+  document.getElementById('cl-input').addEventListener('input', function(e){ apply(e.target.value, true); });
+  document.getElementById('cl-rand').addEventListener('click', function(){
+    apply(hsl2hex(Math.random()*360, 72+Math.random()*20, 50+Math.random()*10), true);
+  });
+  document.getElementById('cl-reset').addEventListener('click', function(){ apply(DEFAULT, true); });
+
+  var forced = new URLSearchParams(location.search).get('live');
+  var stored = null; try{ stored = localStorage.getItem('rebufo-live'); }catch(e){}
+  apply((forced ? forced : (stored ? stored : DEFAULT)), false);
+})();
+</script>
+<!-- ═══════════════ /COLOR LAB ═══════════════ -->
+
+</body>
+</html>

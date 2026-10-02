@@ -1,0 +1,253 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T22:40:00Z",
+  "title": "Design System: Rebufo — Live Timing",
+  "extensions": {
+    "colorMeta": {
+      "rebufo-red": {
+        "role": "primary",
+        "displayName": "Rebufo Red",
+        "canonical": "#FF2D1F",
+        "tonalRamp": ["#4D0500", "#870800", "#C10C00", "#FB1000", "#FF4337", "#FF7A71", "#FFB0AB", "#FFE7E5"]
+      },
+      "rebufo-red-bright": {
+        "role": "primary",
+        "displayName": "Rebufo Red Bright",
+        "canonical": "#FF5A48",
+        "tonalRamp": ["#4D0500", "#870800", "#C10C00", "#FB1000", "#FF4337", "#FF7A71", "#FFB0AB", "#FFE7E5"]
+      },
+      "rebufo-red-deep": {
+        "role": "primary",
+        "displayName": "Rebufo Red Deep",
+        "canonical": "#9E1206",
+        "tonalRamp": ["#400D0D", "#701717", "#A12020", "#D12A2A", "#DD5858", "#E78989", "#F1B9B9", "#FBEAEA"]
+      },
+      "night-ground": {
+        "role": "neutral",
+        "displayName": "Night Ground",
+        "canonical": "#08090B",
+        "tonalRamp": ["#060709", "#0B0D11", "#12161B", "#1B2027", "#262C34", "#3B434E", "#7E8896", "#F3F6F9"]
+      },
+      "panel-graphite": {
+        "role": "neutral",
+        "displayName": "Panel Graphite",
+        "canonical": "#12161B",
+        "tonalRamp": ["#060709", "#0B0D11", "#12161B", "#1B2027", "#262C34", "#3B434E", "#7E8896", "#F3F6F9"]
+      },
+      "panel-graphite-deep": {
+        "role": "neutral",
+        "displayName": "Panel Graphite Deep",
+        "canonical": "#0E1116",
+        "tonalRamp": ["#060709", "#0B0D11", "#12161B", "#1B2027", "#262C34", "#3B434E", "#7E8896", "#F3F6F9"]
+      },
+      "telemetry-white": {
+        "role": "neutral",
+        "displayName": "Telemetry White",
+        "canonical": "#F3F6F9",
+        "tonalRamp": ["#060709", "#0B0D11", "#12161B", "#1B2027", "#262C34", "#3B434E", "#7E8896", "#F3F6F9"]
+      },
+      "read-gray": {
+        "role": "neutral",
+        "displayName": "Read Gray",
+        "canonical": "#AEB7C2",
+        "tonalRamp": ["#060709", "#0B0D11", "#12161B", "#1B2027", "#262C34", "#3B434E", "#7E8896", "#F3F6F9"]
+      },
+      "label-gray": {
+        "role": "neutral",
+        "displayName": "Label Gray",
+        "canonical": "#7E8896",
+        "tonalRamp": ["#060709", "#0B0D11", "#12161B", "#1B2027", "#262C34", "#3B434E", "#7E8896", "#F3F6F9"]
+      },
+      "sector-amber": {
+        "role": "tertiary",
+        "displayName": "Sector Amber",
+        "canonical": "#FFC400",
+        "tonalRamp": ["#4D3B00", "#876800", "#C19400", "#FBC100", "#FFD137", "#FFDE71", "#FFECAB", "#FFF9E5"]
+      },
+      "track-green": {
+        "role": "tertiary",
+        "displayName": "Track Green",
+        "canonical": "#2FD36A",
+        "tonalRamp": ["#0D3F1F", "#186F37", "#229F4F", "#2CCF67", "#5ADC89", "#8AE6AB", "#BAF0CD", "#EAFBF0"]
+      },
+      "ers-blue": {
+        "role": "tertiary",
+        "displayName": "ERS Blue",
+        "canonical": "#3AA0FF",
+        "tonalRamp": ["#00284D", "#004687", "#0064C1", "#0082FB", "#379EFF", "#71BAFF", "#ABD7FF", "#E5F3FF"]
+      },
+      "fastest-purple": {
+        "role": "tertiary",
+        "displayName": "Fastest Purple",
+        "canonical": "#C077FF",
+        "tonalRamp": ["#29004D", "#480087", "#6800C1", "#8700FB", "#A237FF", "#BD71FF", "#D8ABFF", "#F3E5FF"]
+      },
+      "compound-soft": {
+        "role": "tertiary",
+        "displayName": "Compound Soft",
+        "canonical": "#FF3B30",
+        "tonalRamp": ["#4D0400", "#870700", "#C10A00", "#FB0D00", "#FF4137", "#FF7871", "#FFB0AB", "#FFE7E5"]
+      },
+      "compound-medium": {
+        "role": "tertiary",
+        "displayName": "Compound Medium",
+        "canonical": "#FFC400",
+        "tonalRamp": ["#4D3B00", "#876800", "#C19400", "#FBC100", "#FFD137", "#FFDE71", "#FFECAB", "#FFF9E5"]
+      },
+      "compound-hard": {
+        "role": "tertiary",
+        "displayName": "Compound Hard",
+        "canonical": "#E9EDF2",
+        "tonalRamp": ["#060709", "#0B0D11", "#12161B", "#1B2027", "#262C34", "#3B434E", "#7E8896", "#F3F6F9"]
+      },
+      "compound-inter": {
+        "role": "tertiary",
+        "displayName": "Compound Intermediate",
+        "canonical": "#38D97A",
+        "tonalRamp": ["#0C4022", "#16713B", "#1FA255", "#28D36E", "#57DF8F", "#88E8AF", "#B9F2D0", "#EAFBF1"]
+      },
+      "compound-wet": {
+        "role": "tertiary",
+        "displayName": "Compound Wet",
+        "canonical": "#3AA0FF",
+        "tonalRamp": ["#00284D", "#004687", "#0064C1", "#0082FB", "#379EFF", "#71BAFF", "#ABD7FF", "#E5F3FF"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Wordmark and the selected driver's name only." },
+      "headline": { "displayName": "Headline", "purpose": "Grand-prix name and panel emphasis." },
+      "title": { "displayName": "Title", "purpose": "Panel headings and driver codes." },
+      "body": { "displayName": "Body", "purpose": "Feed copy in radio and race control." },
+      "label": { "displayName": "Label", "purpose": "Column headers, gauge captions, chips, tags." },
+      "data": { "displayName": "Data", "purpose": "Every number, tabular." },
+      "data-display": { "displayName": "Data Display", "purpose": "The telemetry delta, the largest data voice." }
+    },
+    "shadows": [
+      { "name": "plate", "value": "0 1px 0 rgba(255,255,255,.06) inset, 0 22px 40px -34px #000", "purpose": "Raised instrument panels." },
+      { "name": "bar", "value": "0 1px 0 rgba(255,255,255,.05) inset, 0 14px 30px -22px #000", "purpose": "Top bar and session bar." },
+      { "name": "element", "value": "0 1px 0 rgba(255,255,255,.08) inset, 0 6px 14px -8px #000", "purpose": "Wordmark tile and floating tags." },
+      { "name": "recess", "value": "inset 0 1px 2px rgba(0,0,0,.7), inset 0 0 0 1px rgba(255,255,255,.035)", "purpose": "Lane tracks and gauge troughs." },
+      { "name": "field", "value": "inset 0 0 240px 40px rgba(0,0,0,.75)", "purpose": "Fixed viewport vignette." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "Default easing for all state transitions." },
+      { "name": "state-fast", "value": "160ms", "purpose": "Hover and selection washes." },
+      { "name": "meter", "value": "500ms", "purpose": "Gauge fill (transform: scaleX) changes." },
+      { "name": "live-pulse", "value": "1.6s infinite", "purpose": "Playhead and live-tick opacity pulse; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "wide", "value": "1320px" },
+      { "name": "medium", "value": "1120px" },
+      { "name": "narrow", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Category Button",
+      "kind": "button",
+      "refersTo": "button-category",
+      "description": "The active motorsport category; the only solid red fill in the chrome.",
+      "html": "<button class=\"ds-cat-btn\">F1</button>",
+      "css": ".ds-cat-btn{font-family:var(--font-ui,'Quicksand',system-ui,sans-serif);font-weight:700;font-size:11px;letter-spacing:.06em;color:#fff;background:linear-gradient(180deg,#D01C0C,#9E1206);border:0;border-radius:8px;padding:7px 12px;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.28) inset,0 6px 16px -10px #000;transition:background .18s cubic-bezier(.16,1,.3,1)}.ds-cat-btn:hover{background:linear-gradient(180deg,#E0230F,#B41508)}.ds-cat-btn:focus-visible{outline:2px solid var(--red,#FF2D1F);outline-offset:2px}"
+    },
+    {
+      "name": "Session Tab",
+      "kind": "button",
+      "refersTo": "button-tab",
+      "description": "Session selector tab (FP1…RACE); unused tabs stay quiet on the graphite trough.",
+      "html": "<button class=\"ds-tab\">QUALI</button>",
+      "css": ".ds-tab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-weight:700;font-size:11px;letter-spacing:.06em;color:var(--ink-2,#AEB7C2);background:transparent;border:0;border-radius:7px;padding:7px 8px;cursor:pointer;transition:color .18s cubic-bezier(.16,1,.3,1),background .18s cubic-bezier(.16,1,.3,1)}.ds-tab:hover{color:var(--ink,#F3F6F9);background:rgba(255,255,255,.05)}.ds-tab.is-active{color:#fff;background:linear-gradient(180deg,#232A33,#151A20);box-shadow:0 1px 0 rgba(255,255,255,.1) inset,0 0 0 1px rgba(255,255,255,.13)}.ds-tab:focus-visible{outline:2px solid var(--red,#FF2D1F);outline-offset:2px}"
+    },
+    {
+      "name": "Status Chip",
+      "kind": "chip",
+      "refersTo": "chip-status",
+      "description": "Read-only status pill: leader, DRS, safety car, weather reading.",
+      "html": "<span class=\"ds-chip\"><span class=\"ds-chip-lbl\">Líder</span><b>NOR</b></span>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;gap:8px;min-height:32px;padding:7px 12px;border-radius:9px;background:var(--panel-2,#0E1116);border:1px solid rgba(255,255,255,.065);color:var(--ink-2,#AEB7C2);font-family:var(--font-ui,'Quicksand',system-ui,sans-serif);font-size:11.5px;font-weight:600}.ds-chip-lbl{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3,#7E8896)}.ds-chip b{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:14px;color:#fff}"
+    },
+    {
+      "name": "Compound Chip",
+      "kind": "chip",
+      "refersTo": "compound-chip",
+      "description": "Tyre compound as a perfect circle, tinted by the compound hue.",
+      "html": "<span class=\"ds-compound ds-compound-m\">M</span>",
+      "css": ".ds-compound{width:18px;height:18px;border-radius:999px;display:grid;place-items:center;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;font-weight:700;background:radial-gradient(circle at 50% 35%,rgba(255,255,255,.09),transparent 60%),#08090B;border:1.5px solid currentColor}.ds-compound-s{color:#FF3B30}.ds-compound-m{color:#FFC400}.ds-compound-h{color:#E9EDF2}.ds-compound-i{color:#38D97A}.ds-compound-w{color:#3AA0FF}"
+    },
+    {
+      "name": "Driver Lane Row",
+      "kind": "custom",
+      "refersTo": "lane-row",
+      "description": "The signature row: a frozen timing gutter beside a compound-coloured stint ribbon.",
+      "html": "<div class=\"ds-lane\"><span class=\"ds-lane-pos\">1</span><span class=\"ds-lane-code\">NOR</span><span class=\"ds-lane-gap\">LÍDER</span><span class=\"ds-lane-track\"><span class=\"ds-lane-stint ds-lane-m\"></span><span class=\"ds-lane-stint ds-lane-h\"></span></span></div>",
+      "css": ".ds-lane{display:grid;grid-template-columns:28px 90px 1fr 320px;align-items:center;gap:8px;height:21px;font-family:var(--font-mono,'JetBrains Mono',monospace);color:var(--ink,#F3F6F9);cursor:pointer;transition:background .16s cubic-bezier(.16,1,.3,1)}.ds-lane:hover{background:rgba(255,255,255,.05)}.ds-lane.is-selected{background:linear-gradient(90deg,rgba(255,45,31,.12),transparent 45%)}.ds-lane-pos{width:24px;height:18px;line-height:18px;text-align:center;font-size:14px;font-weight:700;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.065)}.ds-lane-code{font-size:12.5px;font-weight:700}.ds-lane-gap{font-size:12px;color:var(--ink-2,#AEB7C2);text-align:right}.ds-lane-track{position:relative;height:7px;border-radius:4px;background:linear-gradient(180deg,#0B0E12,#0F1319);box-shadow:inset 0 1px 2px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.035)}.ds-lane-stint{position:absolute;top:50%;transform:translateY(-50%);height:12px;border-radius:3px;box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 -1px 0 rgba(0,0,0,.35) inset}.ds-lane-m{left:0;width:52%;background:linear-gradient(180deg,#FFD24D,#FFC400 55%,#C99A00)}.ds-lane-h{left:53%;width:47%;background:linear-gradient(180deg,#F7F9FC,#E9EDF2 55%,#B6BCC4)}"
+    },
+    {
+      "name": "Telemetry Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "A raised graphite instrument plate with a tracked heading and a top highlight hairline.",
+      "html": "<section class=\"ds-panel\"><header class=\"ds-panel-head\"><h3>Telemetría</h3><span class=\"ds-panel-tag\">Vuelta 34</span></header><div class=\"ds-panel-body\"><b class=\"ds-delta\">+2.418</b></div></section>",
+      "css": ".ds-panel{position:relative;border-radius:12px;background:linear-gradient(180deg,#141922 0%,#0E1218 42%,#0A0D12 100%);border:1px solid rgba(255,255,255,.065);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 22px 40px -34px #000;overflow:hidden}.ds-panel::before{content:\"\";position:absolute;left:12px;right:12px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent)}.ds-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 13px;border-bottom:1px solid rgba(255,255,255,.065)}.ds-panel-head h3{margin:0;font-family:var(--font-ui,'Quicksand',system-ui,sans-serif);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2,#AEB7C2)}.ds-panel-tag{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;color:var(--ink-3,#7E8896);padding:2px 7px;border-radius:5px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.065)}.ds-panel-body{padding:12px 13px}.ds-delta{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:30px;font-weight:700;color:var(--red-2,#FF5A48);font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Comm Item",
+      "kind": "custom",
+      "description": "A line in the radio or race-control feed, keyed by a 1px semantic border.",
+      "html": "<div class=\"ds-comm ds-comm-radio\"><time>21:45:47 · NOR</time><p>Neumáticos muertos, box box.</p></div>",
+      "css": ".ds-comm{display:flex;flex-direction:column;gap:2px;padding:5px 9px;border-radius:8px;background:rgba(255,255,255,.028);border:1px solid rgba(255,255,255,.035);border-left:1px solid rgba(255,45,31,.42);font-family:var(--font-ui,'Quicksand',system-ui,sans-serif)}.ds-comm time{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;color:var(--ink-3,#7E8896)}.ds-comm p{margin:0;font-size:11px;color:var(--ink-2,#AEB7C2);line-height:1.35}.ds-comm-wall{border-left-color:rgba(58,160,255,.5)}.ds-comm-rc{border-left-color:#FFC400;background:rgba(255,196,0,.14)}"
+    },
+    {
+      "name": "Timing Tower Row",
+      "kind": "custom",
+      "description": "One driver in the 13-column timing tower: pos, driver, gap, interval, last/best, micro-sectors, sectors, laps, pit, tyre.",
+      "html": "<div class=\"ds-tr\"><span class=\"ds-tr-pos\">1</span><span class=\"ds-tr-drv\"><i class=\"ds-tr-tick\"></i>NOR</span><span class=\"ds-tr-n\">LÍDER</span><span class=\"ds-tr-n\">—</span><span class=\"ds-tr-n ds-strong\">1:36.412</span><span class=\"ds-tr-n\">1:34.982</span><span class=\"ds-tr-micro\"><i class=\"p\"></i><i class=\"g\"></i><i class=\"y\"></i><i class=\"g\"></i><i class=\"p\"></i><i class=\"g\"></i><i class=\"y\"></i><i class=\"g\"></i></span><span class=\"ds-tr-s p\">24.086</span><span class=\"ds-tr-s g\">31.568</span><span class=\"ds-tr-s y\">40.925</span><span class=\"ds-tr-laps\">34</span><span class=\"ds-tr-laps\">1</span><span class=\"ds-tr-tyre\"><i class=\"ds-cmp\">H</i>17</span></div>",
+      "css": ".ds-tr{display:grid;grid-template-columns:34px 1.4fr 70px 62px 78px 78px 1.6fr 48px 48px 48px 42px 42px 78px;align-items:center;height:20px;padding:0 10px;border-bottom:1px solid rgba(255,255,255,.035);font-family:var(--font-mono,'JetBrains Mono',monospace);color:var(--ink,#F3F6F9);cursor:pointer}.ds-tr:hover{background:rgba(255,255,255,.04)}.ds-tr-pos{justify-self:center;width:22px;height:16px;line-height:16px;text-align:center;font-size:11px;font-weight:700;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.065)}.ds-tr-drv{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700}.ds-tr-tick{width:3px;height:14px;border-radius:2px;background:#FF8000}.ds-tr-n{text-align:right;font-size:11.5px;color:var(--ink-2,#AEB7C2)}.ds-tr-n.ds-strong{color:var(--ink,#F3F6F9);font-weight:600}.ds-tr-micro{display:flex;gap:2px;height:8px;padding-left:10px}.ds-tr-micro i{flex:1;border-radius:2px;background:rgba(255,255,255,.07)}.ds-tr-micro i.p{background:#C077FF}.ds-tr-micro i.g{background:#2FD36A}.ds-tr-micro i.y{background:#FFC400}.ds-tr-s{justify-self:center;font-size:11px;padding:1px 4px;border-radius:4px}.ds-tr-s.p{color:#C077FF;background:rgba(177,75,255,.12)}.ds-tr-s.g{color:#2FD36A;background:rgba(47,211,106,.1)}.ds-tr-s.y{color:#E3C34A;background:rgba(255,196,0,.08)}.ds-tr-laps{justify-self:center;font-size:11.5px;color:var(--ink-2,#AEB7C2)}.ds-tr-tyre{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--ink-3,#7E8896)}.ds-cmp{width:18px;height:18px;border-radius:999px;display:grid;place-items:center;font-size:10px;font-weight:700;border:1.5px solid #E9EDF2;color:#E9EDF2;background:#08090B}"
+    },
+    {
+      "name": "Circuit Map",
+      "kind": "custom",
+      "description": "Authored SVG track with three sector regions (S1 blue, S2 slate, S3 amber) and one dot per running car.",
+      "html": "<svg class=\"ds-circ\" viewBox=\"0 0 200 120\" role=\"img\" aria-label=\"Circuit map\"><path class=\"ds-circ-base\" d=\"M30 104 C8 70 26 22 78 20 C130 18 156 46 186 62 C196 68 190 92 172 96 C150 101 120 92 100 96 C70 102 48 112 30 104\"/><path class=\"ds-circ-s1\" d=\"M78 20 C130 18 156 46 186 62\"/><path class=\"ds-circ-s2\" d=\"M30 104 C8 70 26 22 78 20\"/><path class=\"ds-circ-s3\" d=\"M186 62 C196 68 190 92 172 96 C150 101 120 92 100 96 C70 102 48 112 30 104\"/><circle class=\"ds-dot\" cx=\"78\" cy=\"20\" r=\"5\" fill=\"#FF8000\"/><circle class=\"ds-dot\" cx=\"132\" cy=\"38\" r=\"4\" fill=\"#E8002D\"/></svg>",
+      "css": ".ds-circ{width:100%;height:100%;display:block}.ds-circ-base{fill:none;stroke:#242B34;stroke-width:12;stroke-linejoin:round}.ds-circ-s1{fill:none;stroke:#3AA0FF;stroke-width:5;stroke-linecap:round}.ds-circ-s2{fill:none;stroke:#C9D2DC;stroke-width:5;stroke-linecap:round}.ds-circ-s3{fill:none;stroke:#FFC400;stroke-width:5;stroke-linecap:round}.ds-dot{stroke:#08090B;stroke-width:2}"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Cabina Nocturna",
+    "overview": "A night telemetry cockpit: the dark of a race-control room, instruments lit from within, and one live light — Rebufo red — carrying every moving state. The screen is a machine you read at a glance, not a page you scroll. Density is the point; every pixel that is not data is structure (rules, bezels, gutters) or air. The system is Operate first: familiarity outranks expression, and a fan must trust ordering, gaps, pace and tyre state within two seconds. The centre is the timing tower; the circuit map and best-lap benchmarks sit to its right; the compound stint ribbons live one tab away under Timing | Stints. Depth is built by instrumental layering, not glow — graphite plates separated by 1px hairlines, a top highlight and a long low neutral shadow; light comes from the ambient field and from state, never from a zero-offset coloured halo.",
+    "keyCharacteristics": [
+      "Near-black ground; graphite instrument plates; F1 red as the only live accent.",
+      "The timing tower is the centre; the stint ribbon is its second tab.",
+      "Quicksand for chrome, Chillax for the wordmark, JetBrains Mono for every number.",
+      "1px hairlines, inner top-highlights, and low neutral shadows instead of coloured glows.",
+      "Colour is state: compound, sector, flag and category each own a fixed hue.",
+      "The circuit map paints three fixed sector regions; the driver dots carry team hue."
+    ],
+    "rules": [
+      { "name": "The One Live Light Rule", "body": "Rebufo Red marks only what is live, selected, or the current lap. It never decorates a static object; its scarcity is what makes the playhead legible.", "section": "colors" },
+      { "name": "The Data-Owns-Its-Hue Rule", "body": "Compound, sector, flag and category hues are reserved for their data meaning and are never used as brand chrome.", "section": "colors" },
+      { "name": "The Track-Paint Rule", "body": "The circuit's three sector regions are painted with a fixed triad — S1 ERS Blue, S2 Slate Light, S3 Sector Amber — as spatial identity only. Sector time status (purple/green/amber) lives on the timing tower and never on the map.", "section": "colors" },
+      { "name": "The Numbers-Are-Mono Rule", "body": "Every quantity — time, gap, temperature, speed, gear, position — is set in JetBrains Mono with tabular figures. Prose and labels are never mono.", "section": "typography" },
+      { "name": "The No-Eyebrow Rule", "body": "No small tracked label is placed above a heading. LIVE TIMING sits inside the wordmark lockup and R16 is an information value, not a kicker.", "section": "typography" },
+      { "name": "The No-Halo Rule", "body": "Shadows are neutral and offset. A zero-offset coloured blur is a defect, not a highlight, even when the element is live; liveness is carried by red fills, not red halos.", "section": "elevation" },
+      { "name": "The Recess Rule", "body": "Anything that holds a value (a track, a trough, a progress bar) is recessed with an inner shadow; anything that presents one is raised with an inner top highlight.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the near-black ground and let red appear only on live/selected/current-lap state (The One Live Light Rule).",
+      "Do keep the timing tower as the centre of the surface, with the stint ribbon one tab away.",
+      "Do set every number in JetBrains Mono with tabular figures.",
+      "Do build depth from hairline + inner top highlight + gradient + one low neutral shadow together.",
+      "Do reserve compound, sector, flag and category hues strictly for their data meaning (The Track-Paint Rule governs the map).",
+      "Do keep the dock to three panels and the tower to 20 rows within a 1440×900 viewport.",
+      "Do label synthetic data as synthetic wherever it ships."
+    ],
+    "donts": [
+      "Don't use coloured glow shadows or zero-offset halos, even on live elements.",
+      "Don't use gradient text, eyebrow labels above headings, or emoji as icons.",
+      "Don't animate layout properties (width/height); animate transform and opacity.",
+      "Don't use functional text below 11px, or coloured left borders above 1px.",
+      "Don't reformat the timing tower into cards or drop a column instead of scrolling it.",
+      "Don't introduce a profile, account, or settings surface into this dashboard."
+    ]
+  }
+}
