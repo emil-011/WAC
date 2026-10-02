@@ -5,7 +5,7 @@
 ![Firebase](https://img.shields.io/badge/Firebase-Auth%20%7C%20Firestore%20%7C%20FCM-FFCA28?logo=firebase&logoColor=black)
 ![minSdk](https://img.shields.io/badge/minSdk-34%20(Android%2014)-3DDC84?logo=android&logoColor=white)
 
-**WAC (We Are Checking)** es una aplicación Android para seguir los principales campeonatos de deportes de motor — **Fórmula 1**, **MotoGP** e **IndyCar** — con calendarios, clasificaciones, información de circuitos, meteorología de la carrera y noticias. Incluye autenticación de usuarios y notificaciones push configurables por categoría.
+**WAC (We Are Checking)** es una aplicación Android para seguir los principales campeonatos de deportes de motor — **Fórmula 1**, **MotoGP** e **IndyCar**, sus calendarios, clasificaciones, información de circuitos, meteorología de la carrera y noticias. Incluye autenticación de usuarios y notificaciones push configurables por categoría.
 
 > 🎓 Proyecto de **Fin de Ciclo de Formación Profesional (FP)**.
 
@@ -17,9 +17,9 @@
 |:---:|:---:|:---:|
 | <img src="screenshots/login.webp" width="240"> | <img src="screenshots/home.webp" width="240"> | <img src="screenshots/f1_overview.webp" width="240"> |
 
-| F1 · Clasificación | F1 · Calendario | Perfil |
-|:---:|:---:|:---:|
-| <img src="screenshots/f1_standings.webp" width="240"> | <img src="screenshots/f1_schedule.webp" width="240"> | <img src="screenshots/profile.webp" width="240"> |
+| F1 · Clasificación | F1 · Calendario |
+|:---:|:---:|
+| <img src="screenshots/f1_standings.webp" width="240"> | <img src="screenshots/f1_schedule.webp" width="240"> |
 
 ---
 
